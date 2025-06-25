@@ -1,0 +1,33 @@
+{
+    "cSpell.words": [
+        "aiofiles",
+        "asyncio",
+        "asyncpg",
+        "dateutil",
+        "dotenv",
+        "fastapi",
+        "httpx",
+        "isort",
+        "loguru",
+        "onupdate",
+        "passlib",
+        "psycopg",
+        "pydantic",
+        "pytest",
+        "sqlalchemy",
+        "structlog",
+        "uvicorn"
+    ],
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "blackArgs",
+    "python.sortImports.onSave": true,
+    "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingTypeStubs": "none"
+  },
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=100",
+    "--extend-ignore=E203,W503"
+  ]
+}

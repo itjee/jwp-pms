@@ -15,7 +15,11 @@ schema = strawberry.Schema(query=Query, mutation=Mutation)
 # GraphQL 라우터 생성 (인증 의존성 추가)
 graphql_app = GraphQLRouter(
     schema,
-    dependencies=[Depends(get_current_active_user)] if os.getenv("REQUIRE_AUTH", "true") == "true" else []
+    dependencies=(
+        [Depends(get_current_active_user)]
+        if os.getenv("REQUIRE_AUTH", "true") == "true"
+        else []
+    ),
 )
 
 # FastAPI 앱 생성
@@ -43,11 +47,19 @@ app.include_router(graphql_app, prefix="/graphql")
 if not os.path.exists(settings.UPLOAD_DIR):
     os.makedirs(settings.UPLOAD_DIR)
 
-app.mount("/uploads", StaticFiles(directory=settings.UPLOAD_DIR), name="uploads")
+app.mount(
+    "/uploads",
+    StaticFiles(directory=settings.UPLOAD_DIR),
+    name="uploads"
+)
 
 @app.get("/")
 async def root():
-    return {"message": "PMS API is running", "graphql": "/graphql", "docs": "/docs"}
+    return {
+        "message": "PMS API is running",
+        "graphql": "/graphql",
+        "docs": "/docs"
+    }
 
 @app.get("/health")
 async def health_check():

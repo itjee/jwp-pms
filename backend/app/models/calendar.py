@@ -3,9 +3,10 @@ from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from app.core.database import Base
 
+
 class Calendar(Base):
     __tablename__ = "calendars"
-    
+
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(100), nullable=False)
     description = Column(Text)
@@ -13,12 +14,13 @@ class Calendar(Base):
     owner_id = Column(Integer, ForeignKey("users.id"), nullable=False)
     is_default = Column(Boolean, default=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
-    
+
     events = relationship("Event", back_populates="calendar")
+
 
 class Event(Base):
     __tablename__ = "events"
-    
+
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(200), nullable=False)
     description = Column(Text)
@@ -32,5 +34,5 @@ class Event(Base):
     created_by = Column(Integer, ForeignKey("users.id"), nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
-    
+
     calendar = relationship("Calendar", back_populates="events")

@@ -1,17 +1,52 @@
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
-pydantic==2.5.0
-sqlalchemy==2.0.23
-alembic==1.13.1
-asyncpg==0.29.0
-strawberry-graphql[fastapi]==0.215.1
-python-jose[cryptography]==3.3.0
+# 웹 프레임워크
+fastapi==0.115.13
+uvicorn[standard]==0.34.3
+
+# 데이터 검증 및 직렬화
+pydantic==2.11.7
+pydantic_core==2.33.2
+pydantic-settings==2.10.1
+
+# 데이터베이스
+sqlalchemy[asyncio]==2.0.41
+//asyncpg==0.29.0
+psycopg[async]=3.2.9
+alembic==1.16.2
+
+# GraphQL
+strawberry-graphql[fastapi]==0.275.2
+
+# 인증 및 보안
+python-jose[cryptography]==3.5.0
 passlib[bcrypt]==1.7.4
-python-multipart==0.0.6
-python-dotenv==0.21.0
-redis==5.0.1
-celery==5.3.4
-structlog==23.2.0
-pytest==7.4.3
-pytest-asyncio==0.21.1
-httpx==0.25.2
+python-multipart==0.0.20
+
+# 환경 설정
+python-dotenv==1.1.1
+
+# 캐싱
+redis==6.2.0
+
+# 백그라운드 작업
+celery==5.5.3
+
+
+##HTTP 클라이언트
+httpx==0.28.1p
+requests==2.32.4
+
+# 개발용 도구
+pytest==8.4.1
+pytest-asyncio==1.0.0
+black=25.1.0
+isort==6.0.1
+
+# 파일처리
+aiofiles==24.1.0
+Pillow==11.2.1
+
+# 유틸리티
+python-dateutil==2.9.0.post0
+
+# 로깅
+structlog==25.4.0
