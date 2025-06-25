@@ -5,7 +5,7 @@ from typing import Optional
 class Settings(BaseSettings):
     # Database
     DATABASE_URL: str = (
-        "postgresql+psycopg://pms_admin:PmsAdmin!!@10.10.150.85:6297/pms"
+        "postgresql+asyncpg://pms_admin:PmsAdmin!!@10.10.150.85:6297/pms"
     )
 
     # Security

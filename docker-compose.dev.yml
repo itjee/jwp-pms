@@ -31,7 +31,7 @@ services:
       dockerfile: Dockerfile
     container_name: pms_backend_dev
     environment:
-      - DATABASE_URL=postgresql+psycopg://pms_admin:PmsAdmin@10.10.150.85:6297/pms
+      - DATABASE_URL=postgresql+asyncpg://pms_admin:PmsAdmin@10.10.150.85:6297/pms
       - REDIS_URL=redis://redis:6379
       - SECRET_KEY=dev-secret-key
       - ALGORITHM=HS256

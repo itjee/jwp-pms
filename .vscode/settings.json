@@ -56,14 +56,35 @@
       "typescriptreact": "html"
     },
     "cSpell.words": [
+      "abstractmethod",
+      "addopts",
+      "aiofiles",
+      "asyncio",
+      "asyncpg",
+      "dateutil",
+      "dotenv",
       "fastapi",
       "headlessui",
       "heroicons",
+      "httpx",
+      "isort",
       "levelname",
+      "minversion",
+      "mypy",
+      "passlib",
+      "psycopg",
+      "pycache",
+      "pydantic",
+      "pytest",
+      "qualname",
+      "setuptools",
       "sqlalchemy",
       "starlette",
+      "structlog",
       "tailwindcss",
       "tanstack",
-      "uvicorn"
+      "testpaths",
+      "uvicorn",
+      "venv"
     ]
   }
